@@ -147,13 +147,27 @@
     .contact-item{padding:14px 16px; border-radius:16px; background:rgba(8,15,30,.7); border:1px solid var(--line); color:var(--muted)}
     footer{padding:32px 0 54px; color:var(--muted); text-align:center;}
     .muted{color:var(--muted)}
-    @media (max-width:1050px){.hero-grid,.split,.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .content-shell{display:grid; grid-template-columns:260px minmax(0,1fr); gap:24px; align-items:start;}
+    .side-nav{position:sticky; top:96px; align-self:start;}
+    .side-card{padding:18px; }
+    .side-title{font-size:12px; text-transform:uppercase; letter-spacing:.22em; color:#b4efff; margin:0 0 10px;}
+    .side-list{display:flex; flex-direction:column; gap:8px;}
+    .side-link{display:block; padding:11px 14px; border-radius:14px; color:var(--muted); background:rgba(255,255,255,.02); border:1px solid transparent; transition:.18s ease;}
+    .side-link:hover{color:var(--text); border-color:rgba(86,214,255,.20); background:rgba(86,214,255,.08); transform:translateX(2px);}
+    .side-note{margin-top:14px; font-size:13px; color:var(--muted); line-height:1.6;}
+    .main-sections section{scroll-margin-top:92px;}
+
+    @media (max-width:1050px){.hero-grid,.split,.grid-3,.grid-2,.content-shell{grid-template-columns:1fr}}
     @media (max-width:720px){
       .container{padding:0 18px}
       .nav-inner{align-items:flex-start; padding:12px 0}
       .nav-links{gap:12px}
       .stats,.contact-grid{grid-template-columns:1fr}
       .hero{padding-top:46px}
+    }
+    @media (max-width:1050px){
+      .side-nav{display:none;}
     }
   </style>
 </head>
@@ -221,6 +235,23 @@
   </header>
 
   <main class="container">
+    <div class="content-shell">
+      <aside class="side-nav">
+        <div class="panel side-card">
+          <div class="side-title">Section Menu</div>
+          <nav class="side-list">
+            <a class="side-link" href="#about">关于我</a>
+            <a class="side-link" href="#areas">研究方向</a>
+            <a class="side-link" href="#highlights">近期亮点</a>
+            <a class="side-link" href="#capability">科研成果</a>
+            <a class="side-link" href="#awards">荣誉</a>
+            <a class="side-link" href="#timeline">经历</a>
+            <a class="side-link" href="#contact">联系</a>
+          </nav>
+          <div class="side-note">左侧导航会固定显示，滚动到页面下方也能直接跳到其他部分。</div>
+        </div>
+      </aside>
+      <div class="main-sections">
     <section id="areas">
       <div class="section-head">
         <div>
@@ -423,6 +454,8 @@
         </div>
       </div>
     </section>
+      </div>
+    </div>
   </main>
 
   <footer>
