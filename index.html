@@ -87,18 +87,7 @@
     }
     .subtitle{font-size:clamp(1.15rem, 2.2vw, 1.6rem); color:#d8e5ff; margin:0 0 10px;}
     .lead{font-size:1.05rem; color:var(--muted); max-width:820px}
-    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 18px; border-radius:18px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); color:var(--text);
-      transition:.22s ease; box-shadow: var(--glow);
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{
-      background:linear-gradient(135deg, rgba(86,214,255,.20), rgba(142,125,255,.18));
-      border-color:rgba(86,214,255,.25);
-    }
+
     .panel{
       position:relative;
       background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
@@ -143,19 +132,12 @@
     .timeline-item strong{color:var(--text)}
     .awards li{margin-bottom:12px}
     .metric-band{margin-top:18px; padding:16px 18px; border-radius:18px; background:linear-gradient(135deg, rgba(86,214,255,.08), rgba(142,125,255,.08)); border:1px solid var(--line); color:var(--muted);}
-    .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:14px}
-    .contact-item{padding:14px 16px; border-radius:16px; background:rgba(8,15,30,.7); border:1px solid var(--line); color:var(--muted)}
+
     footer{padding:32px 0 54px; color:var(--muted); text-align:center;}
     .muted{color:var(--muted)}
 
-    .content-shell{display:grid; grid-template-columns:260px minmax(0,1fr); gap:24px; align-items:start;}
-    .side-nav{position:sticky; top:96px; align-self:start;}
-    .side-card{padding:18px; }
-    .side-title{font-size:12px; text-transform:uppercase; letter-spacing:.22em; color:#b4efff; margin:0 0 10px;}
-    .side-list{display:flex; flex-direction:column; gap:8px;}
-    .side-link{display:block; padding:11px 14px; border-radius:14px; color:var(--muted); background:rgba(255,255,255,.02); border:1px solid transparent; transition:.18s ease;}
-    .side-link:hover{color:var(--text); border-color:rgba(86,214,255,.20); background:rgba(86,214,255,.08); transform:translateX(2px);}
-    .side-note{margin-top:14px; font-size:13px; color:var(--muted); line-height:1.6;}
+    .content-shell{display:block;}
+
     .main-sections section{scroll-margin-top:92px;}
 
     @media (max-width:1050px){.hero-grid,.split,.grid-3,.grid-2,.content-shell{grid-template-columns:1fr}}
@@ -166,9 +148,7 @@
       .stats,.contact-grid{grid-template-columns:1fr}
       .hero{padding-top:46px}
     }
-    @media (max-width:1050px){
-      .side-nav{display:none;}
-    }
+
   </style>
 </head>
 <body>
@@ -186,7 +166,8 @@
         <a href="#capability">科研成果</a>
         <a href="#awards">荣誉</a>
         <a href="#timeline">经历</a>
-        <a href="#contact">联系</a>
+        <a href="https://scholar.google.com/citations?user=D2QbXPQXqbgC&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="#email">Email</a>
       </div>
     </div>
   </nav>
@@ -198,15 +179,11 @@
         <h1>Zhidong Li</h1>
         <p class="subtitle">人工智能与数据科学专家 · 悉尼科技大学副教授</p>
         <p class="lead">
-          长期从事 <strong>translational AI</strong> 研究，专注于将机器学习、图学习、时空建模、
+          长期从事 <strong>translational AI</strong> 研究，关注将机器学习、图学习、时空建模、
           计算机视觉、遥感与负责任 AI 方法转化为可部署、可解释、可审计的实际系统，
-          服务于农业、房地产、基础设施、医疗、环境与公共部门决策场景。
+          服务于农业、房地产、基础设施、医疗、环境与公共决策等应用场景。
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#highlights">查看近期亮点</a>
-          <a class="btn" href="#areas">研究与应用方向</a>
-        </div>
-        <div class="metric-band">
+<div class="metric-band">
           方法论框架：<strong>问题建模 → 数据治理与特征工程 → 模型与不确定性管理 → 可解释性与风险评估 → API / 仪表盘 / 技术报告交付</strong>
         </div>
       </div>
@@ -236,22 +213,7 @@
 
   <main class="container">
     <div class="content-shell">
-      <aside class="side-nav">
-        <div class="panel side-card">
-          <div class="side-title">Section Menu</div>
-          <nav class="side-list">
-            <a class="side-link" href="#about">关于我</a>
-            <a class="side-link" href="#areas">研究方向</a>
-            <a class="side-link" href="#highlights">近期亮点</a>
-            <a class="side-link" href="#capability">科研成果</a>
-            <a class="side-link" href="#awards">荣誉</a>
-            <a class="side-link" href="#timeline">经历</a>
-            <a class="side-link" href="#contact">联系</a>
-          </nav>
-          <div class="side-note">左侧导航会固定显示，滚动到页面下方也能直接跳到其他部分。</div>
-        </div>
-      </aside>
-      <div class="main-sections">
+<div class="main-sections">
     <section id="areas">
       <div class="section-head">
         <div>
@@ -270,7 +232,7 @@
         <div class="panel card">
           <div class="tag">城市智能</div>
           <h3>房地产与租赁市场智能</h3>
-          <p>主导租金预测研究与系统原型开发，整合房产属性、区域统计与市场指标，构建支持 property-level 与 area-level 预测的自动化分析流程。</p>
+          <p>推进租金预测研究与系统原型开发，整合房产属性、区域统计与市场指标，构建支持 property-level 与 area-level 预测的自动化分析流程。</p>
         </div>
         <div class="panel card">
           <div class="tag">基础设施</div>
@@ -435,30 +397,12 @@
         </div>
       </div>
     </section>
-
-    <section id="contact">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Contact</div>
-          <h2>联系</h2>
-        </div>
-        <p>可继续补充 UTS 主页、Google Scholar、LinkedIn 或未来的项目与应用入口。</p>
-      </div>
-
-      <div class="panel card">
-        <div class="contact-grid">
-          <div class="contact-item"><strong>邮箱</strong><br />zhidong.li(AT)uts.edu.au</div>
-          <div class="contact-item"><strong>机构</strong><br />Data Science Institute, UTS</div>
-          <div class="contact-item"><strong>建议补充</strong><br />Google Scholar 链接</div>
-          <div class="contact-item"><strong>建议补充</strong><br />LinkedIn / UTS Profile</div>
-        </div>
-      </div>
-    </section>
-      </div>
+</div>
     </div>
   </main>
 
-  <footer>
+  <footer id="email">
+    <div style="margin-bottom:8px;">Email: zhidong.li (AT) uts.edu.au</div>
     © <span id="year"></span> Zhidong Li · 用 AI 驱动未来
   </footer>
 
